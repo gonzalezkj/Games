@@ -1,0 +1,26 @@
+<div style="text-align-last: center; margin-top: 300px">
+    <div *ngIf="!play"> 
+    Enter the minimum number and maximum number. <br>
+    <input type="number" [(ngModel)]="myjuego.min" style="margin-right:20px; margin-top: 20px; margin-bottom: 20px">
+    <input type="number" [(ngModel)]="myjuego.max"><br>
+
+    <input type="buttom" (click)="iniciar()" value="Start" >
+    <br>
+    <br>
+    You've won {{this.victorias}} times. 
+    <br>
+    <br>
+    You've lost {{this.perdidas}} times.
+    </div>
+    <div *ngIf="play">
+        In a range of {{myjuego.min}} to {{myjuego.max}} guess what the number that came out is.
+        <br>
+        Number of tries: {{myjuego.trys}}
+        <br>
+        <br>
+        <input type="number" [(ngModel)]="myjuego.inp">
+        <br>
+        <br>
+        <input type="buttom" (click)="ganarPerder()" value="¡Click for luck!">
+    </div>
+</div>
