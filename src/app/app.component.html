@@ -1,8 +1,39 @@
 <div class="container">
-    <app-encabezado></app-encabezado>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#"><img class="imagen" style="width: 40px; height: 40px; border-radius: 10px;" src="./assets/ImagenJuego.jpg"></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item" routerLinkActive="active">
+                <a class="nav-link active" aria-current="page" [routerLink]="['/']" routerLinkActive="active" *ngIf="isAuthenticated()">Home</a>
+              </li>
+              <li class="nav-item" routerLinkActive="active">
+                <a class="nav-link" [routerLink]="['/games']" routerLinkActive="active" *ngIf="isAuthenticated()">Games</a>
+              </li>
+              <li class="nav-item" routerLinkActive="active">
+                <a class="nav-link" [routerLink]="['/aboutme']" routerLinkActive="active" *ngIf="isAuthenticated()">About me</a>
+              </li>
+                      <li class="nav-item">
+              <a class="nav-link" routerLink="/signIn" routerLinkActive="active" *ngIf="!isAuthenticated()">Sign in</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLink="/profile" routerLinkActive="active" *ngIf="isAuthenticated()">Profile</a>
+              </li> 
+              <li class="nav-item">
+                <a class="nav-link" routerLink="" (click)="signOut()" *ngIf="isAuthenticated()">Sign out</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+    </nav>
 
     <router-outlet></router-outlet>
     
     <app-footer></app-footer>
+
 </div>
+
 

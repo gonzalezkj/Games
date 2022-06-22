@@ -1,22 +1,23 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ProfileComponent } from './vista/profile/profile.component';
+import { SignInComponent } from './vista/sign-in/sign-in.component';
 import { AboutmeComponent } from './vista/aboutme/aboutme.component';
 import { AdivinaComponent } from './vista/adivina/adivina.component';
 import { AhorcadoComponent } from './vista/ahorcado/ahorcado.component';
 import { GamesComponent } from './vista/games/games.component';
 import { HomeComponent } from './vista/home/home.component';
-import { LoginComponent } from './vista/login/login.component';
-import { RegistroComponent } from './vista/registro/registro.component';
 
 const routes: Routes = [
-  { path: '', component:HomeComponent },
-  { path: 'login', component:LoginComponent },
-  { path: 'registro', component:RegistroComponent },
+  { path: 'home', component:HomeComponent },
+  { path: '', redirectTo: 'home', pathMatch: 'full'},
+  { path: 'profile', component: ProfileComponent},
+  { path: 'signIn', component: SignInComponent},
   { path: 'games', component:GamesComponent },
   { path: 'aboutme', component:AboutmeComponent },
   { path: 'ahorcado', component:AhorcadoComponent },
   { path: 'adivina', component:AdivinaComponent},
-  { path: '**', redirectTo: '/', pathMatch: 'full'},
+  { path: '**', redirectTo: 'signIn'},
 ];
 
 @NgModule({

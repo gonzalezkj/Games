@@ -7,12 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EncabezadoComponent implements OnInit {
 
+  showlogout: boolean = true
+
   constructor() { }
 
   ngOnInit(): void {
   }
   
-  logout(){
-    localStorage.clear()
-  }
 }
