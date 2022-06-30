@@ -3,3 +3,7 @@
     height: 40px;
     border-radius: 10px;
 }
+.navbar.navbar-expand-lg.navbar-dark.bg-primary {
+    position:fixed; 
+    top: 0;
+}

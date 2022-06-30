@@ -15,6 +15,11 @@ import { SignInComponent } from './vista/sign-in/sign-in.component';
 import { ProfileComponent } from './vista/profile/profile.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
+import { StatsComponent } from './vista/stats/stats.component';
+import { TatetiComponent } from './vista/tateti/tateti.component';
+import { AhorcadoerrorComponent } from './vista/ahorcadoerror/ahorcadoerror.component';
+import { AboutmeServices } from './vista/aboutme/aboutme.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -28,6 +33,9 @@ import { ToastrModule } from 'ngx-toastr';
     AhorcadoComponent,
     AdivinaComponent,
     ProfileComponent,
+    StatsComponent,
+    TatetiComponent,
+    AhorcadoerrorComponent,
   ],
   imports: [
     BrowserModule,
@@ -35,8 +43,14 @@ import { ToastrModule } from 'ngx-toastr';
     FormsModule,
     BrowserAnimationsModule, // required animations module
     ToastrModule.forRoot(), // ToastrModule added
+    HttpClientModule,
   ],
-  providers: [],
+  exports: [
+    AdivinaComponent, // ??????????????!!!!!!!!!!!!!
+  ],
+  providers: [
+    AboutmeServices
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

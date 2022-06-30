@@ -61,6 +61,7 @@ export class SupabaseService {
       website: userUpdate.website,
       id: user?.id,
       updated_at: new Date(),
+
     };
 
     this.alert.showSuccess('Modified data', 'The modification was done correctly')

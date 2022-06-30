@@ -2,6 +2,16 @@
     <div class="row">
         <div class="col-12">
             &nbsp;
+            <ng-template [ngIf]="!errores">
+                <img src="{{imagenes[0]}}" alt="">
+            </ng-template>
+            <ng-template [ngIf]="errores">
+                <img src="{{imagenes[errores]}}" alt="">
+            </ng-template>
+            &nbsp;
+            <br>
+            <br>
+            <br>
             <span *ngFor="let esp of espacios">
                 <span *ngIf="!contiene(esp)">
                     <p style="width: 20px">___</p> &nbsp;
@@ -12,9 +22,10 @@
             </span>
         </div>
     </div>
-    <input style="margin-top:30px" type="text" max="1" (keyup)="validar()"[(ngModel)]="letra">
+    <input style="margin-top:30px" type="text" max="1" (keyup)="validar()" [(ngModel)]="letra">
     <br>
     <p style="margin-top: 30px"> Lyrics used so far: </p>
     <br>
     {{miAhorcado.letrasElegidas}}
+
 </div>

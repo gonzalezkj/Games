@@ -1,4 +1,4 @@
 .bg-dark.text-white.fixex-bottom.container {
-    position: absolute;
+    position: fixed;
     bottom: 0;
 }

@@ -7,6 +7,8 @@ import { AdivinaComponent } from './vista/adivina/adivina.component';
 import { AhorcadoComponent } from './vista/ahorcado/ahorcado.component';
 import { GamesComponent } from './vista/games/games.component';
 import { HomeComponent } from './vista/home/home.component';
+import { StatsComponent } from './vista/stats/stats.component';
+import { TatetiComponent } from './vista/tateti/tateti.component';
 
 const routes: Routes = [
   { path: 'home', component:HomeComponent },
@@ -17,6 +19,8 @@ const routes: Routes = [
   { path: 'aboutme', component:AboutmeComponent },
   { path: 'ahorcado', component:AhorcadoComponent },
   { path: 'adivina', component:AdivinaComponent},
+  { path: 'tateti', component:TatetiComponent},
+  { path: 'stats', component:StatsComponent},
   { path: '**', redirectTo: 'signIn'},
 ];
 

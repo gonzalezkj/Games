@@ -1,1 +1,39 @@
-<p>aboutme works!</p>
+<div style="text-align-last: center; margin-top: 110px; margin-bottom: 150px;">
+    <div class="row">
+        <div class="inicio col-12" >
+            <img [src]="avatar" class="imagen">
+            <div class="texto">
+                <p>{{ name }}</p>
+                <p>{{ bio }}</p>
+                <p>{{ location }}</p>
+            </div>
+        </div>
+        <div class="col-12">
+            <p style="background-color:white; color: black; margin-top: 50px; border-radius: 10px; margin-bottom: 30px;"> About me </p>
+            <div class="repositorios col-12">
+                <p style="justify-self: left; margin-left: 40px; text-align-last: start;"> 
+                    Focused on gaining experience and continuing to increase knowledge in the systems area.
+                    <br>
+                    <br>
+                    In my first project I made a website for product purchases, in which the order is loaded and sent as proof to the email associated with the registered account. For this I used Python with Django as a framework and other technologies such as JavaScript and SQLite.
+                    <br>
+                    <br>
+                    I am currently developing a multi-company billing management and stock control system, using the same tools.
+                    <br>
+                    <br>
+                    In addition, I am learning Angular and Typescript with the aim of achieving similar projects. 
+                </p>
+                <div class="link" style="text-align-last: start;">
+                        <a href="https://www.linkedin.com/in/gonzalezkj/" target="_blank"><img class="img1" src="assets/linkedin3.png"></a> 
+                        <a href="https://github.com/gonzalezkj" target="_blank"><img class="img1" src="assets/git5.png"></a>
+                        <a href="mailto:kevinjgonzalez98@gmail.com" class="email" target="_blank"><img class="img1" src="assets/email4.png"></a>
+                </div>
+            </div>
+            <p style="background-color:white; color: black; margin-top: 50px; border-radius: 10px; margin-bottom: 30px;"> Repositories of GitHub </p>
+            <div class="repositorios col-12" *ngFor="let repo of misRepos | async ">
+                <p style="justify-self: left; margin-left: 40px"> {{ repo.name }} </p>
+                <p style="justify-self: left; margin-left: 40px; text-align-last: start;"> {{ repo.description }} </p>
+            </div>
+        </div>
+    </div>
+</div>

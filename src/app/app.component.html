@@ -16,7 +16,10 @@
               <li class="nav-item" routerLinkActive="active">
                 <a class="nav-link" [routerLink]="['/aboutme']" routerLinkActive="active" *ngIf="isAuthenticated()">About me</a>
               </li>
-                      <li class="nav-item">
+              <li class="nav-item" routerLinkActive="active">
+                <a class="nav-link" [routerLink]="['/stats']" routerLinkActive="active" *ngIf="isAuthenticated()">Stats</a>
+              </li>
+              <li class="nav-item">
               <a class="nav-link" routerLink="/signIn" routerLinkActive="active" *ngIf="!isAuthenticated()">Sign in</a>
               </li>
               <li class="nav-item">
@@ -29,6 +32,7 @@
           </div>
         </div>
     </nav>
+
 
     <router-outlet></router-outlet>
     

@@ -11,8 +11,8 @@ export class AdivinaComponent implements OnInit {
   play:boolean;
   victorias:number;
   perdidas:number;
-
   myjuego:Adivina;
+
   constructor() { 
     this.myjuego=new Adivina();
     this.play=false;
@@ -31,13 +31,13 @@ export class AdivinaComponent implements OnInit {
   ganarPerder(){
     if(this.myjuego.victoria_derrota()==true){
     this.play=false;
-    this.victorias++;}
-    else if(this.myjuego.victoria_derrota()==false){
+    this.victorias++;
+    } else if(this.myjuego.victoria_derrota()==false){
       this.play=false
       this.perdidas++;
-    }else{
+    } else {
       this.play=true
-      this.myjuego.trys++;}
+      this.myjuego.trys++;
+    }
   }
-  
 }
