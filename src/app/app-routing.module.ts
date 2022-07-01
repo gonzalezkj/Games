@@ -9,6 +9,7 @@ import { GamesComponent } from './vista/games/games.component';
 import { HomeComponent } from './vista/home/home.component';
 import { StatsComponent } from './vista/stats/stats.component';
 import { TatetiComponent } from './vista/tateti/tateti.component';
+import { PiedrapapelComponent } from './vista/piedrapapel/piedrapapel.component';
 
 const routes: Routes = [
   { path: 'home', component:HomeComponent },
@@ -20,6 +21,7 @@ const routes: Routes = [
   { path: 'ahorcado', component:AhorcadoComponent },
   { path: 'adivina', component:AdivinaComponent},
   { path: 'tateti', component:TatetiComponent},
+  { path: 'piedrapapel', component:PiedrapapelComponent},
   { path: 'stats', component:StatsComponent},
   { path: '**', redirectTo: 'signIn'},
 ];

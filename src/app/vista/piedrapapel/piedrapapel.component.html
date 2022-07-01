@@ -1,0 +1,21 @@
+<div class="title" style="margin-top: 150px">
+  <h1> Rock Paper Scissors</h1>
+</div>
+  <div class="score-board">
+    <div id="user-label" class="badge">Usu.</div>
+    <div id="comp-label" class="badge">Comp.</div>
+    <span id="user-score">{{ pointsUser }}</span>:<span id="comp-score">{{ pointsComp }}</span>
+  </div>
+  <p class="info-game">{{result}}</p>
+  <div class="choices">
+    <div class="choice" (click)="play('r')">
+        <img src="/assets/piedra.jpg">
+    </div>
+    <div class="choice" (click)="play('p')">
+        <img src="/assets/papel.jpg">
+    </div>
+    <div class="choice" (click)="play('s')">
+        <img src="/assets/tijera.jpg">
+    </div>
+</div>
+<p class="info-game">Choose your fighter</p>
