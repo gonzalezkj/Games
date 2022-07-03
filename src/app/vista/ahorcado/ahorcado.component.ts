@@ -25,7 +25,7 @@ export class AhorcadoComponent implements OnInit {
     this.miAhorcado = new Ahorcado();
     this.miAhorcado.palabra = 'Angular';
     this.espacios = this.miAhorcado.palabra.split('');
-    this.imagenes = ['assets/ahorcado0.png', 'assets/ahorcado1.jpg', 'assets/ahorcado2.jpg', 'assets/ahorcado3.jpg', 'assets/ahorcado4.jpg','assets/ahorcado5.jpg', 'assets/ahorcado6.jpg', 'assets/ahorcado7.jpg']
+    this.imagenes = ['assets/imagenes/ahorcado0.png', 'assets/imagenes/ahorcado1.jpg', 'assets/imagenes/ahorcado2.jpg', 'assets/imagenes/ahorcado3.jpg', 'assets/imagenes/ahorcado4.jpg','assets/imagenes/ahorcado5.jpg', 'assets/imagenes/ahorcado6.jpg', 'assets/imagenes/ahorcado7.jpg']
   }
 
   ngOnInit(): void {

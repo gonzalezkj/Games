@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+
 @Component({
   selector: 'app-stats',
   templateUrl: './stats.component.html',
@@ -6,10 +7,14 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class StatsComponent implements OnInit {
   
+  @Input() vict: string;
+
   constructor() {
   }
 
   ngOnInit(): void {
-  }
+  } 
+
+
 
 }

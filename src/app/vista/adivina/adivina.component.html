@@ -7,10 +7,10 @@
     <input type="buttom" (click)="iniciar()" value="Start" >
     <br>
     <br>
-    You've won {{this.victorias}} times. 
+    <label id="victs">You've won {{this.localvictorias.getItem('victorias')}} times. </label>
     <br>
     <br>
-    You've lost {{this.perdidas}} times.
+    You've lost {{this.localderrotas.getItem('derrotas')}} times.
     </div>
     <div *ngIf="play">
         In a range of {{myjuego.min}} to {{myjuego.max}} guess what the number that came out is.

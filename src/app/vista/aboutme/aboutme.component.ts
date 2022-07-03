@@ -32,6 +32,7 @@ export class AboutmeComponent implements OnInit {
 
     this.misRepos = this.git.getRepos();
   }
+  
 
 
 }

@@ -21,6 +21,7 @@ import { AhorcadoerrorComponent } from './vista/ahorcadoerror/ahorcadoerror.comp
 import { AboutmeServices } from './vista/aboutme/aboutme.service';
 import { HttpClientModule } from '@angular/common/http';
 import { PiedrapapelComponent } from './vista/piedrapapel/piedrapapel.component';
+import { PremiumComponent } from './vista/premium/premium.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { PiedrapapelComponent } from './vista/piedrapapel/piedrapapel.component'
     TatetiComponent,
     AhorcadoerrorComponent,
     PiedrapapelComponent,
+    PremiumComponent,
   ],
   imports: [
     BrowserModule,
