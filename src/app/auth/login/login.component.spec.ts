@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AhorcadoerrorComponent } from './ahorcadoerror.component';
+import { LoginComponent } from './login.component';
 
-describe('AhorcadoerrorComponent', () => {
-  let component: AhorcadoerrorComponent;
-  let fixture: ComponentFixture<AhorcadoerrorComponent>;
+describe('LoginComponent', () => {
+  let component: LoginComponent;
+  let fixture: ComponentFixture<LoginComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ AhorcadoerrorComponent ]
+      declarations: [ LoginComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(AhorcadoerrorComponent);
+    fixture = TestBed.createComponent(LoginComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

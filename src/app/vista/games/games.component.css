@@ -13,3 +13,9 @@
     display: grid;
     grid-template-columns: 300px 300px;
 }
+
+.divtateti{
+    text-align-last: center;
+    place-content: center;
+    margin-top: 20px;
+}

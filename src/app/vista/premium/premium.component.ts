@@ -7,9 +7,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PremiumComponent implements OnInit {
 
-  constructor() { }
+  premium:boolean = false;
+  userpremium:number = 0;
+  localpremium:Storage;
+
+  constructor() {
+    this.premium = false;
+    this.userpremium = 0;
+    this.localpremium = localStorage;
+   }
 
   ngOnInit(): void {
   }
 
+  premiumUser(){
+    this.premium = true;
+    if (this.premium == true){
+      this.userpremium = 1;
+      this.localpremium.setItem('premium', String(this.userpremium));
+      console.log(this.localpremium)
+    }
+  }
+
 }
+

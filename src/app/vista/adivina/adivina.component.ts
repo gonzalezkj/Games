@@ -7,6 +7,7 @@ import { Adivina } from 'src/app/Entidades/adivina';
   templateUrl: './adivina.component.html',
   styleUrls: ['./adivina.component.css']
 })
+
 export class AdivinaComponent implements OnInit {
   play:boolean;
   victorias:number;
@@ -42,18 +43,16 @@ export class AdivinaComponent implements OnInit {
     if(this.myjuego.victoria_derrota()==true){
     this.play=false;
     this.victorias++;
-    this.localvictorias.setItem('victorias', String(this.victorias));
+    this.localvictorias.setItem('victoriasadivina', String(this.victorias));
     console.log(this.localvictorias)
     } else if(this.myjuego.victoria_derrota()==false){
       this.play=false;
       this.perdidas++;
-      this.localderrotas.setItem('derrotas', String(this.perdidas));
+      this.localderrotas.setItem('derrotasadivina', String(this.perdidas));
     } else {
       this.play=true
       this.myjuego.trys++;
     }
-    this.a = localStorage.getItem('victorias');
-    this.b = this.b + parseInt(this.a!)
   }
 
 }

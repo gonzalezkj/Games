@@ -6,8 +6,9 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-ahorcado',
   templateUrl: './ahorcado.component.html',
-  styleUrls: ['./ahorcado.component.css']
+  styleUrls: ['./ahorcado.component.css'],
 })
+
 export class AhorcadoComponent implements OnInit {
 
   public espacios: Array<string>;
@@ -19,6 +20,8 @@ export class AhorcadoComponent implements OnInit {
   public resuelto:string = '';
   public victorias:number = 0;
   public derrotas:number = 0;
+  public localvictorias: Storage;
+  public localderrotas: Storage;
   
   constructor(private router:Router,private alert:AlertasService) {
     this.prueba = false;
@@ -26,6 +29,8 @@ export class AhorcadoComponent implements OnInit {
     this.miAhorcado.palabra = 'Angular';
     this.espacios = this.miAhorcado.palabra.split('');
     this.imagenes = ['assets/imagenes/ahorcado0.png', 'assets/imagenes/ahorcado1.jpg', 'assets/imagenes/ahorcado2.jpg', 'assets/imagenes/ahorcado3.jpg', 'assets/imagenes/ahorcado4.jpg','assets/imagenes/ahorcado5.jpg', 'assets/imagenes/ahorcado6.jpg', 'assets/imagenes/ahorcado7.jpg']
+    this.localvictorias = localStorage;
+    this.localderrotas = localStorage;
   }
 
   ngOnInit(): void {
@@ -45,10 +50,12 @@ export class AhorcadoComponent implements OnInit {
     if (this.resuelto.length == (this.miAhorcado.palabra.length)-1 && (this.errores<7)){
       this.alert.showSuccess('WIN!', 'You got all the letters right')
       this.victorias ++;
+      this.localvictorias.setItem('victoriaahorcado', String(this.victorias));
       this.router.navigate(['home'])
     } else if (this.errores>=7){
       this.alert.showError('LOSE!', "You couldn't guess all the letters ")
       this.derrotas ++;
+      this.localderrotas.setItem('derrotaahorcado', String(this.victorias));
       this.router.navigate(['home'])
     }
   }

@@ -3,10 +3,10 @@
         <div class="col-12">
             &nbsp;
             <ng-template [ngIf]="!errores">
-                <img src="{{imagenes[0]}}" alt="">
+                <img class="imagenes" src="{{imagenes[0]}}" alt="">
             </ng-template>
             <ng-template [ngIf]="errores">
-                <img src="{{imagenes[errores]}}" alt="">
+                <img class="imagenes" src="{{imagenes[errores]}}" alt="">
             </ng-template>
             &nbsp;
             <br>

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { SupabaseService } from './supabase.service';
 import { AboutmeServices } from './vista/aboutme/aboutme.service';
+import { AuthService } from './auth/services/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -12,30 +12,19 @@ export class AppComponent implements OnInit {
 
   session: any;
   aboutme: any;
-
-  constructor( private router: Router, private supabaseService: SupabaseService, public github:AboutmeServices)
-  {
-    this.session = this.supabaseService.getSession();
-  }
+  userLogged = this.authService.getUserLogged();
+  
+  constructor( private router: Router, public github:AboutmeServices, private authService: AuthService)
+  {}
 
 
   public ngOnInit(): void {
-    this.supabaseService.authChanges((_, session) => this.session = session);
     this.github.getUsuario().subscribe((r) => { this.aboutme = r; console.log(r)})
   }
 
-  public isAuthenticated(): boolean {
-    if (this.session) {
-      return true;
-    }
-    return false;
-  }
-
-  public signOut(): void {
-    this.supabaseService.signOut()
-    .then(() => {
-      this.router.navigate(['/signIn']);
-    });
+  logout(){
+    this.authService.logout();
+    this.router.navigate(['login']);
   }
 
 }

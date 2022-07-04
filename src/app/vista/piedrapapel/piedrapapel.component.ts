@@ -11,9 +11,13 @@ export class PiedrapapelComponent implements OnInit {
   result: string;
   pointsUser = 0;
   pointsComp =  0;
+  localvictorias: Storage;
+  localderrotas: Storage;
 
   constructor(private playGame: GameService) {
     this.result = '';
+    this.localvictorias = localStorage;
+    this.localderrotas = localStorage;
   }
 
   ngOnInit(): void {
@@ -25,6 +29,8 @@ export class PiedrapapelComponent implements OnInit {
     const result = this.playGame.game(choice);
     this.result = result.message;
     this.pointsUser += result.userAdd;
+    this.localvictorias.setItem('victoriapiedrapapel', String(this.pointsUser));
     this.pointsComp += result.compAdd;
+    this.localvictorias.setItem('derrotapiedrapapel', String(this.pointsComp));
   }
 }

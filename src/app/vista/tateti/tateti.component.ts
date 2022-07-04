@@ -13,6 +13,8 @@ export class TatetiComponent implements OnInit {
   public equipoazul: number = 0;
   public equiporojo: number = 0;
   public cuadro: any;
+  public victorias:number = 0;
+  public derrotas:number = 0;
   public rojo1: number = 0;
   public rojo2: number = 0;
   public rojo3: number = 0;
@@ -31,8 +33,15 @@ export class TatetiComponent implements OnInit {
   public blue7: number = 0;
   public blue8: number = 0;
   public blue9: number = 0;
+  public localvictorias: Storage;
+  public localderrotas: Storage;
 
-  constructor(private router:Router, private alert:AlertasService) { }
+  constructor(private router:Router, private alert:AlertasService) { 
+    this.victorias = 0;
+    this.derrotas = 0;
+    this.localvictorias = localStorage;
+    this.localderrotas = localStorage;
+  }
 
   ngOnInit(): void {
   }
@@ -41,68 +50,100 @@ export class TatetiComponent implements OnInit {
     if ((this.rojo1 == 1) && (this.rojo2 == 1) && (this.rojo3 == 1) && (this.equiporojo >= 3)){
       console.log(this.equiporojo)
       this.alert.showSuccess('WIN!', 'You got three in line')
+      this.victorias ++;
+      this.localvictorias.setItem('victoriatateti', String(this.victorias));
       this.router.navigate(['home'])
     } else if ((this.rojo1 == 1) && (this.rojo4 == 1) && (this.rojo7 == 1) && (this.equiporojo >= 3)){
       console.log(this.equiporojo)
       this.alert.showSuccess('WIN!', 'You got three in line')
+      this.victorias ++;
+      this.localvictorias.setItem('victoriatateti', String(this.victorias));
       this.router.navigate(['home'])
     } else if ((this.rojo1 == 1) && (this.rojo5 == 1) && (this.rojo9 == 1) && (this.equiporojo >= 3)){
       console.log(this.equiporojo)
       this.alert.showSuccess('WIN!', 'You got three in line')
+      this.victorias ++;
+      this.localvictorias.setItem('victoriatateti', String(this.victorias));
       this.router.navigate(['home'])
     } else if ((this.rojo3 == 1) && (this.rojo6 == 1) && (this.rojo9 == 1) && (this.equiporojo >= 3)){
       console.log(this.equiporojo)
       this.alert.showSuccess('WIN!', 'You got three in line')
+      this.victorias ++;
+      this.localvictorias.setItem('victoriatateti', String(this.victorias));
       this.router.navigate(['home'])
     } else if ((this.rojo9 == 1) && (this.rojo8 == 1) && (this.rojo7 == 1) && (this.equiporojo >= 3)){
       console.log(this.equiporojo)
       this.alert.showSuccess('WIN!', 'You got three in line')
+      this.victorias ++;
+      this.localvictorias.setItem('victoriatateti', String(this.victorias));
       this.router.navigate(['home'])
     } else if ((this.rojo3 == 1) && (this.rojo5 == 1) && (this.rojo7 == 1) && (this.equiporojo >= 3)){
       console.log(this.equiporojo)
       this.alert.showSuccess('WIN!', 'You got three in line')
+      this.victorias ++;
+      this.localvictorias.setItem('victoriatateti', String(this.victorias));
       this.router.navigate(['home'])
     } else if ((this.rojo2 == 1) && (this.rojo5 == 1) && (this.rojo8 == 1) && (this.equiporojo >= 3)){
         console.log(this.equiporojo)
         this.alert.showSuccess('WIN!', 'You got three in line')
+        this.victorias ++;
+        this.localvictorias.setItem('victoriatateti', String(this.victorias));
         this.router.navigate(['home'])
     } else if ((this.rojo4 == 1) && (this.rojo5 == 1) && (this.rojo6 == 1) && (this.equiporojo >= 3)){
         console.log(this.equiporojo)
         this.alert.showSuccess('WIN!', 'You got three in line')
+        this.victorias ++;
+        this.localvictorias.setItem('victoriatateti', String(this.victorias));
         this.router.navigate(['home'])
 
 
     } else if ((this.blue1 == 1) && (this.blue2 == 1) && (this.blue3 == 1) && (this.equipoazul >= 3)){
       console.log(this.equiporojo)
       this.alert.showSuccess('WIN!', 'You got three in line')
+      this.victorias ++;
+      this.localvictorias.setItem('victoriatateti', String(this.victorias));
       this.router.navigate(['home'])
     } else if ((this.blue1 == 1) && (this.blue4 == 1) && (this.blue7 == 1) && (this.equipoazul >= 3)){
       console.log(this.equiporojo)
       this.alert.showSuccess('WIN!', 'You got three in line')
+      this.victorias ++;
+      this.localvictorias.setItem('victoriatateti', String(this.victorias));
       this.router.navigate(['home'])
     } else if ((this.blue1 == 1) && (this.blue5 == 1) && (this.blue9 == 1) && (this.equipoazul >= 3)){
       console.log(this.equiporojo)
       this.alert.showSuccess('WIN!', 'You got three in line')
+      this.victorias ++;
+      this.localvictorias.setItem('victoriatateti', String(this.victorias));
       this.router.navigate(['home'])
     } else if ((this.blue1 == 3) && (this.blue6 == 1) && (this.blue9 == 1) && (this.equipoazul >= 3)){
       console.log(this.equiporojo)
       this.alert.showSuccess('WIN!', 'You got three in line')
+      this.victorias ++;
+      this.localvictorias.setItem('victoriatateti', String(this.victorias));
       this.router.navigate(['home'])
     } else if ((this.blue9 == 1) && (this.blue8 == 1) && (this.blue7 == 1) && (this.equipoazul >= 3)){
       console.log(this.equiporojo)
       this.alert.showSuccess('WIN!', 'You got three in line')
+      this.victorias ++;
+      this.localvictorias.setItem('victoriatateti', String(this.victorias));
       this.router.navigate(['home'])
     } else if ((this.blue3 == 1) && (this.blue5 == 1) && (this.blue7 == 1) && (this.equipoazul >= 3)){
       console.log(this.equiporojo)
       this.alert.showSuccess('WIN!', 'You got three in line')
+      this.victorias ++;
+      this.localvictorias.setItem('victoriatateti', String(this.victorias));
       this.router.navigate(['home'])
     } else if ((this.blue2 == 1) && (this.blue5 == 1) && (this.blue8 == 1) && (this.equipoazul >= 3)){
       console.log(this.equiporojo)
       this.alert.showSuccess('WIN!', 'You got three in line')
+      this.victorias ++;
+      this.localvictorias.setItem('victoriatateti', String(this.victorias));
       this.router.navigate(['home'])
     } else if ((this.blue4 == 1) && (this.blue5 == 1) && (this.blue6 == 1) && (this.equipoazul >= 3)){
       console.log(this.equiporojo)
       this.alert.showSuccess('WIN!', 'You got three in line')
+      this.victorias ++;
+      this.localvictorias.setItem('victoriatateti', String(this.victorias));
       this.router.navigate(['home'])
   }
 }

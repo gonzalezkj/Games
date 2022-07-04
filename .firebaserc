@@ -1,5 +1,14 @@
 {
   "projects": {
     "default": "gamesangular"
+  },
+  "targets": {
+    "gamesangular": {
+      "hosting": {
+        "my-app": [
+          "gamesangular"
+        ]
+      }
+    }
   }
 }
